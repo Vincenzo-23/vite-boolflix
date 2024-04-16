@@ -1,17 +1,28 @@
-    <script>
-      export default {
-        
+<script>
+import HeaderApp from "./components/HeaderApp.vue"
+import MainApp from "./components/MainApp.vue"
+
+  export default {
+    components:{
+      HeaderApp,
+      MainApp,
+    },
+    data(){
+      return{
+
       }
-    </script>
+    }
+  }
+</script>
 
 
 <template>
-  <div>
-
-  </div>
+  <HeaderApp />
 </template>
 
 
 <style lang="scss">
+
+@use "./style/general"
 
 </style>
