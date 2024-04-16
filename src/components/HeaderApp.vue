@@ -10,7 +10,7 @@ import axios from "axios"
         }
     },
     methods: {
-        fetchItem(){
+        fetchMovies(){
             axios.get(`https://api.themoviedb.org/3/search/movie`, {
                 params: {
                     api_key: this.API_KEY,
@@ -19,7 +19,17 @@ import axios from "axios"
             })
             .then((res) => {
                 store.movies = res.data.results
-                
+            })
+        },
+        fetchSeries(){
+            axios.get(`https://api.themoviedb.org/3/search/tv`, {
+                params: {
+                    api_key: this.API_KEY,
+                    query: this.query,
+                }
+            })
+            .then((res) => {
+                store.series = res.data.results
             })
         }
     }
@@ -38,7 +48,7 @@ import axios from "axios"
                 <input type="search" v-model="query">
             </div>
             <div class="col-auto">
-                <button @click="fetchItem()">Search</button>
+                <button @click="fetchMovies(), fetchSeries()">Search</button>
             </div>
         </div>
     </div>

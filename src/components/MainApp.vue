@@ -1,10 +1,12 @@
 <script>
-import CardComponent from "./CardComponent.vue"
+import CardComponentMovie from "./CardComponentMovie.vue"
+import CardComponentSerie from "./CardComponentSerie.vue"
 import { store } from "../store.js"
 
   export default {
     components:{
-        CardComponent,
+        CardComponentMovie,
+        CardComponentSerie,
     },
     data(){
         return{
@@ -20,7 +22,10 @@ import { store } from "../store.js"
     <div class="container-fluid">
         <div class="row gy-5">
             <div class="col-4" v-for="(movie, i) in store.movies" :key="movie.id" >
-                <CardComponent :card="movie"/>
+                <CardComponentMovie :movies="movie" />
+            </div>
+            <div class="col-4" v-for="(serie, i) in store.series" :key="serie.id" >
+                <CardComponentSerie :series="serie" />
             </div>
         </div>
     </div>

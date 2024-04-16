@@ -1,6 +1,6 @@
 <script>
   export default {
-    props: ["card"],
+    props: ["movies"],
     data(){
         return{
         
@@ -11,30 +11,30 @@
 
 
 <template>
-    <div class="card h-100">
+    <div class="card card_height movies">
         <div class="title">
-          Titolo: {{ card.title }}
+          Titolo: {{ movies.title }}
         </div>
         <div class="original_title">
-          Titolo originale: {{ card.original_title }}
+          Titolo originale: {{ movies.original_title }}
         </div>
         <div class="language">
           Lingua originale:
-          <span v-if="card.original_language === 'en'">
+          <span v-if="movies.original_language === 'en'">
               <img src="/enflag.jpg" alt="flag image" class="flag">
           </span>
-          <span v-else-if="card.original_language === 'it'">
+          <span v-else-if="movies.original_language === 'it'">
               <img src="/itflag.png" alt="flag image" class="flag">
           </span>
-          <span v-else-if="card.original_language === 'fr'">
+          <span v-else-if="movies.original_language === 'fr'">
               <img src="/frflag.jpg" alt="flag image" class="flag">
           </span>
           <span v-else>
-              {{ card.original_language }}
+              {{ movies.original_language }}
           </span>
         </div>
         <div class="vote">
-          Voto: {{ card.vote_average }}
+          Voto: {{ movies.vote_average }}
         </div>
     </div>
 </template>
@@ -43,5 +43,8 @@
 <style lang="scss" scoped>
 .flag{
     max-width: 30px;
+}
+.card_height{
+    height: 100%;
 }
 </style>
