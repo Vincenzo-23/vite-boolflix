@@ -21,10 +21,10 @@ import { store } from "../store.js"
   <main class="section py-5 px-4">
     <div class="container-fluid">
         <div class="row gy-5">
-            <div class="col-4" v-for="(movie, i) in store.movies" :key="movie.id" >
+            <div class="col-4 d-flex justify-content-center text-center" v-for="(movie, i) in store.movies" :key="movie.id" >
                 <CardComponentMovie :movies="movie" />
             </div>
-            <div class="col-4" v-for="(serie, i) in store.series" :key="serie.id" >
+            <div class="col-4 d-flex justify-content-center text-center" v-for="(serie, i) in store.series" :key="serie.id" >
                 <CardComponentSerie :series="serie" />
             </div>
         </div>

@@ -3,7 +3,16 @@
     props: ["series"],
     data(){
         return{
-        
+            imagePath: "https://image.tmdb.org/t/p/",
+            poster_sizes: [
+                "w92",
+                "w154",
+                "w185",
+                "w342",
+                "w500",
+                "w780",
+                "original"
+            ],
         }
     }
   }
@@ -11,7 +20,10 @@
 
 
 <template>
-    <div class="card card_height series">
+    <div class="card card_size series">
+        <div class="poster">
+            <img v-if="series.poster_path !== null" :src="`${this.imagePath}${this.poster_sizes[3]}${series.poster_path}`" alt="Serie Poster">
+        </div>
         <div class="title">
           Titolo: {{ series.original_name }}
         </div>
@@ -41,7 +53,8 @@
 .flag{
     max-width: 30px;
 }
-.card_height{
+.card_size{
     height: 100%;
+    width: 342px;
 }
 </style>
