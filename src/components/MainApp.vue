@@ -11,9 +11,14 @@ import CardComponent from "./CardComponent.vue"
 
 
 <template>
-  <div>
+  <main class="section p-4">
+    <div class="container-fluid">
+        <div class="row">
+            <CardComponent />
+        </div>
+    </div>
 
-  </div>
+  </main>
 </template>
 
 

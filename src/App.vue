@@ -18,6 +18,7 @@ import MainApp from "./components/MainApp.vue"
 
 <template>
   <HeaderApp />
+  <MainApp />
 </template>
 
 

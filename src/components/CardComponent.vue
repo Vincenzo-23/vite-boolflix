@@ -6,9 +6,7 @@
 
 
 <template>
-  <div>
-
-  </div>
+  <div class="col-4">Film</div>
 </template>
 
 
