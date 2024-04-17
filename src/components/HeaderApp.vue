@@ -39,16 +39,10 @@ import axios from "axios"
 <template>
   <header class="section p-4">
     <div class="container-fluid">
-        <div class="row">
-            <div class="logo col-auto me-auto">
-                logo
-            </div>
-            <div class="col-auto">
-                <input type="search" v-model="query" @keyup.enter="fetchItem()" placeholder="Search...">
-            </div>
-            <div class="col-auto">
-                <button @click="fetchItem()">Search</button>
-            </div>
+        <div class="row align-items-center">
+            <div class="logo col-auto me-auto">BOOLFLIX</div>
+            <input class="col-auto search_bar" type="search" v-model="query" @keyup.enter="fetchItem()" placeholder="Search...">
+            <button class="col-auto search_btn" @click="fetchItem()">Search</button>
         </div>
     </div>
   </header>
@@ -56,5 +50,23 @@ import axios from "axios"
 
 
 <style lang="scss" scoped>
+.section{
+    background-color: black;
+}
+.logo{
+    color: red;
+    font-size: 36px;
+}
+.search_bar,
+.search_btn{
+    height: 30px;
+
+}
+.search_bar{
+    margin-right: 20px;
+    border: none;
+    outline: none;
+}
+
 
 </style>

@@ -27,4 +27,7 @@ import MainApp from "./components/MainApp.vue"
 
 @use "./style/general"
 
+
+
+
 </style>

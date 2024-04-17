@@ -42,5 +42,9 @@ import { store } from "../store.js"
 
 
 <style lang="scss" scoped>
+.section{
+  color: white;
+}
+
 
 </style>
