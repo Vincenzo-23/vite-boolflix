@@ -1,16 +1,15 @@
 <script>
-import CardComponentMovie from "./CardComponentMovie.vue"
-import CardComponentSerie from "./CardComponentSerie.vue"
+import Card from "./Card.vue"
 import { store } from "../store.js"
 
   export default {
     components:{
-        CardComponentMovie,
-        CardComponentSerie,
+      Card,
+        
     },
     data(){
         return{
-            store
+          store
         }
     }
   }
@@ -21,12 +20,20 @@ import { store } from "../store.js"
   <main class="section py-5 px-4">
     <div class="container-fluid">
         <div class="row gy-5">
-            <div class="col-4 d-flex justify-content-center text-center" v-for="(movie, i) in store.movies" :key="movie.id" >
-                <CardComponentMovie :movies="movie" />
-            </div>
-            <div class="col-4 d-flex justify-content-center text-center" v-for="(serie, i) in store.series" :key="serie.id" >
-                <CardComponentSerie :series="serie" />
-            </div>
+          <ul class="col-4 d-flex justify-content-center text-center"
+          v-for="(movie, i) in store.movies" :key="movie.id" 
+          v-if="store.movies.length !== 0"
+          >
+            <Card :item="movie" />
+          </ul>
+          <p v-else>Nessun film</p>
+          <ul class="col-4 d-flex justify-content-center text-center" 
+          v-for="(serie, i) in store.series" :key="serie.id" 
+          v-if="store.series.length !== 0"
+          >
+            <Card :item="serie" />
+          </ul>
+          <p v-else>Nessuna serie</p>
         </div>
     </div>
 

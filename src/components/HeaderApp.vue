@@ -6,11 +6,11 @@ import axios from "axios"
     data(){
         return{
             query: "",
-            API_KEY: "361d6824b040c59dc3ba6d0a8e180efe"
+            API_KEY: "e99307154c6dfb0b4750f6603256716d"
         }
     },
     methods: {
-        fetchMovies(){
+        fetchItem(){
             axios.get(`https://api.themoviedb.org/3/search/movie`, {
                 params: {
                     api_key: this.API_KEY,
@@ -20,8 +20,7 @@ import axios from "axios"
             .then((res) => {
                 store.movies = res.data.results
             })
-        },
-        fetchSeries(){
+            
             axios.get(`https://api.themoviedb.org/3/search/tv`, {
                 params: {
                     api_key: this.API_KEY,
@@ -31,7 +30,7 @@ import axios from "axios"
             .then((res) => {
                 store.series = res.data.results
             })
-        }
+        },
     }
   }
 </script>
@@ -45,10 +44,10 @@ import axios from "axios"
                 logo
             </div>
             <div class="col-auto">
-                <input type="search" v-model="query">
+                <input type="search" v-model="query" @keyup.enter="fetchItem()" placeholder="Search...">
             </div>
             <div class="col-auto">
-                <button @click="fetchMovies(), fetchSeries()">Search</button>
+                <button @click="fetchItem()">Search</button>
             </div>
         </div>
     </div>
