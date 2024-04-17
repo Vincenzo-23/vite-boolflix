@@ -8,6 +8,7 @@
     },
     data(){
       return{
+        rating: Math.ceil(this.item.vote_average/2),
         imagePath: "https://image.tmdb.org/t/p/",
         poster_sizes: [
           "w92",
@@ -18,6 +19,7 @@
           "w780",
           "original"
         ],
+        
       }
     }
   }
@@ -50,11 +52,14 @@
         {{ item.original_language }}
       </span>
     </div>
-    <div class="vote">
-      Voto: {{ item.vote_average }}
+    <div class="vote d-flex justify-content-center align-items-center">
+      Voto: 
+      <font-awesome-icon class="stars" :icon="['fas', 'star']" v-for="(n, i) in this.rating" :key="i"/>
+      <font-awesome-icon class="stars" :icon="['far', 'star']" v-for="(n, i) in 5 - this.rating" :key="i"/>
     </div>
   </li>
 </template>
+
 
 
 <style lang="scss" scoped>
@@ -64,5 +69,8 @@
 .card_size{
     height: 100%;
     width: 342px;
+}
+.stars{
+  color: gold;
 }
 </style>
