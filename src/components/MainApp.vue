@@ -20,14 +20,14 @@ import { store } from "../store.js"
   <main class="section py-5 px-4">
     <div class="container-fluid">
         <div class="row gy-5">
-          <ul class="col-4 d-flex justify-content-center text-center"
+          <ul class="col-3 d-flex justify-content-center text-center"
           v-for="(movie, i) in store.movies" :key="movie.id" 
           v-if="store.movies.length !== 0"
           >
             <Card :item="movie" />
           </ul>
           <p v-else>Nessun film</p>
-          <ul class="col-4 d-flex justify-content-center text-center" 
+          <ul class="col-3 d-flex justify-content-center text-center" 
           v-for="(serie, i) in store.series" :key="serie.id" 
           v-if="store.series.length !== 0"
           >
