@@ -77,7 +77,7 @@
   max-width: 30px;
 }
 .card_size{
-  height: 100%;
+  height: 480px;
   width: 342px;
 }
 .stars{
@@ -118,6 +118,6 @@
 }
 
 .overview{
-  font-size: 14px;
+  font-size: 13px;
 }
 </style>
