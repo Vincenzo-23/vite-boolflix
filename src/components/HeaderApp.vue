@@ -6,7 +6,7 @@ import axios from "axios"
     data(){
         return{
             query: "",
-            API_KEY: "e99307154c6dfb0b4750f6603256716d"
+            API_KEY: "361d6824b040c59dc3ba6d0a8e180efe"
         }
     },
     methods: {

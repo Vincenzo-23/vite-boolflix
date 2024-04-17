@@ -83,6 +83,7 @@
 
 .poster{
   position: relative;
+  height: 100%;
 }
 .description{
   padding: 50px 10px 10px;
@@ -105,8 +106,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 490px;
+  height: 100%;
   background-color: rgb(32, 31, 31);
   padding: 10px;
+}
+
+.overview{
+  font-size: 14px;
 }
 </style>
