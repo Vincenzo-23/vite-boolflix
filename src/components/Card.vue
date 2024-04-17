@@ -30,17 +30,20 @@
   <li class="card card_size movies border border-3 border-white">
     <div class="poster">
       <img v-if="item.poster_path !== null" :src="`${this.imagePath}${this.poster_sizes[3]}${item.poster_path}`" alt="Movie Poster">
-      <div v-else class="preview">Immagine non disponibile. <br> Titolo: {{ item.title || item.name }}</div>
+      <div v-else class="preview">
+        <h5>Immagine non disponibile.</h5>
+        <h5>Titolo: {{ item.title || item.name }}</h5> 
+      </div>
     </div>
     <div class="description">
       <div class="title">
-        Titolo: {{ item.title || item.name }}
+        <strong>Titolo:</strong> {{ item.title || item.name }}
       </div>
       <div class="original_title">
-        Titolo originale: {{ item.original_title || item.original_name}}
+        <strong>Titolo originale:</strong> {{ item.original_title || item.original_name}}
       </div>
       <div class="language">
-        Lingua originale:
+        <strong>Lingua originale:</strong>
         <span v-if="item.original_language === 'en'">
             <img src="/enflag.jpg" alt="flag image" class="flag">
         </span>
@@ -55,12 +58,12 @@
         </span>
       </div>
       <div class="vote d-flex justify-content-center align-items-center">
-        Voto: 
+        <strong>Voto:</strong> 
         <font-awesome-icon class="stars" :icon="['fas', 'star']" v-for="(n, i) in this.rating" :key="i"/>
         <font-awesome-icon class="stars" :icon="['far', 'star']" v-for="(n, i) in 5 - this.rating" :key="i"/>
       </div>
       <div class="overview">
-        Overview: {{ item.overview }}
+        <strong>Overview:</strong> {{ item.overview }}
       </div>
     </div>
   </li>
@@ -102,6 +105,9 @@
 }
 
 .preview{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   color: white;
   display: flex;
   justify-content: center;
