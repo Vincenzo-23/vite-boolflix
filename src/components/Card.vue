@@ -87,24 +87,8 @@
 .poster{
   position: relative;
   height: 100%;
-}
-.description{
-  padding: 50px 10px 10px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  background-color: black;
-  opacity: 0;
-  &:hover{
-    opacity: 1;
-    transition: 200ms ease-in-out;
-  }
-  transition: 200ms ease-in-out;
-}
 
-.preview{
+  .preview{
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -115,9 +99,28 @@
   height: 100%;
   background-color: rgb(32, 31, 31);
   padding: 10px;
+  }
 }
 
-.overview{
-  font-size: 13px;
+.description{
+  padding: 50px 10px 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+
+  &:hover{
+    opacity: 1;
+    transition: 200ms ease-in-out;
+  }
+
+  .overview{
+  font-size: 12px;
+  }
 }
+
 </style>
